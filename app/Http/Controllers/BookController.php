@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
 {
-    protected $bookRepository;
+  /*   protected $bookRepository;
 
     public function __construct(BookRepositoryInterface $bookRepository)
     {
@@ -57,8 +57,8 @@ class BookController extends Controller
     } else {
         return redirect()->route('books.index')->with('error', 'Book is not available');
     }
-}
-   /*  public function index()
+} */
+     public function index()
 {
     $books = Book::all();
     return response()->json($books);
@@ -82,7 +82,7 @@ public function store(Request $request)
     $book->stock = $request->input('stock');
     $book->save();
     return response()->json(['book' => $book], 201);
-} */
+} 
 
  public function search($title)
     {
